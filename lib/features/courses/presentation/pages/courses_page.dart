@@ -15,7 +15,13 @@ class _CoursesPageState extends State<CoursesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('التدريب والتطوير - الدورات'),
+        title: Row(
+          children: [
+            Image.asset('assets/images/logo.png', height: 40), // إضافة الشعار
+            const SizedBox(width: 10),
+            const Text('التدريب والتطوير - الدورات'),
+          ],
+        ),
       ),
       body: Column(
         children: [
@@ -34,12 +40,24 @@ class _CoursesPageState extends State<CoursesPage> {
               },
             ),
           ),
-          Expanded( 
+          Expanded(
             child: ListView(
               children: const [
-                CourseCard(title: 'Flutter Clean Architecture', instructor: 'Bashir', price: 50.0),
-                CourseCard(title: 'Cybersecurity Fundamentals', instructor: 'Ahmed', price: 30.0),
-                CourseCard(title: 'Python for Security', instructor: 'Ali', price: 40.0),
+                CourseCard(
+                  title: 'Flutter Clean Architecture',
+                  instructor: 'Bashir',
+                  price: 50.0,
+                ),
+                CourseCard(
+                  title: 'Cybersecurity Fundamentals',
+                  instructor: 'Ahmed',
+                  price: 30.0,
+                ),
+                CourseCard(
+                  title: 'Python for Security',
+                  instructor: 'Ali',
+                  price: 40.0,
+                ),
               ],
             ),
           ),
